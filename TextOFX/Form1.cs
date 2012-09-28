@@ -19,10 +19,10 @@ namespace TextOFX
         private void button1_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
-            EasyFarm.OFX.OfxDocument document = new EasyFarm.OFX.OfxDocument(new FileStream(openFileDialog1.FileName, FileMode.Open));
+            THH.Tools.OFX.OfxDocument document = new THH.Tools.OFX.OfxDocument(new FileStream(openFileDialog1.FileName, FileMode.Open));
             textBox1.Text += "Ofxheader: " + document.OfxHeader + Environment.NewLine;
             textBox1.Text += "data: " + document.Data + Environment.NewLine;
-            foreach (EasyFarm.OFX.Transaction trans in document.Transactions)
+            foreach (THH.Tools.OFX.Transaction trans in document.Transactions)
             {
                 textBox1.Text += trans.Name + Environment.NewLine;
             }
